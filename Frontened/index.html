@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Users Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <p class="subtitle">ADMIN PANEL</p>
+                <h1>Users Management</h1>
+                <p class="description">
+                    Search, filter and sort users from your website.
+                </p>
+            </div>
+
+            <div class="user-count">
+                <span id="totalUsers">0</span>
+                <small>Total Users</small>
+            </div>
+        </header>
+
+
+        <!-- Filters -->
+        <section class="filters">
+
+            <div class="search-box">
+                <label for="searchInput">Search User</label>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by name or email..."
+                >
+            </div>
+
+
+            <div class="filter-group">
+                <label for="minAge">Minimum Age</label>
+
+                <input
+                    type="number"
+                    id="minAge"
+                    placeholder="Min age"
+                    min="0"
+                >
+            </div>
+
+
+            <div class="filter-group">
+                <label for="maxAge">Maximum Age</label>
+
+                <input
+                    type="number"
+                    id="maxAge"
+                    placeholder="Max age"
+                    min="0"
+                >
+            </div>
+
+
+            <div class="filter-group">
+                <label for="sortAge">Sort By Age</label>
+
+                <select id="sortAge">
+                    <option value="">Default</option>
+                    <option value="asc">Age: Low → High</option>
+                    <option value="desc">Age: High → Low</option>
+                </select>
+            </div>
+
+
+            <button id="resetBtn" class="reset-btn">
+                Reset
+            </button>
+
+        </section>
+
+
+        <!-- Loading -->
+        <div id="loading" class="loading">
+            Loading users...
+        </div>
+
+
+        <!-- Error -->
+        <div id="error" class="error hidden">
+            Failed to load users.
+        </div>
+
+
+        <!-- Users -->
+        <section id="usersContainer" class="users-container"></section>
+
+
+        <!-- No Users -->
+        <div id="noUsers" class="no-users hidden">
+            <h2>No Users Found</h2>
+            <p>Try changing your search or filters.</p>
+        </div>
+
+
+        <!-- Pagination -->
+        <div class="pagination">
+
+            <button id="prevBtn" class="page-btn">
+                ← Previous
+            </button>
+
+            <div id="pageNumbers" class="page-numbers"></div>
+
+            <button id="nextBtn" class="page-btn">
+                Next →
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
