@@ -1,8 +1,12 @@
+const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+if (isLoggedIn !== "true") {
+    window.location.href = "../Authorization/index.html";
+}
+
 const API_URL = "http://localhost:8000/api/v1/users";
 
-
 const usersContainer = document.getElementById("usersContainer");
-
 const searchInput = document.getElementById("searchInput");
 const minAgeInput = document.getElementById("minAge");
 const maxAgeInput = document.getElementById("maxAge");
@@ -19,6 +23,7 @@ const totalUsers = document.getElementById("totalUsers");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const pageNumbers = document.getElementById("pageNumbers");
+
 
 
 let allUsers = [];

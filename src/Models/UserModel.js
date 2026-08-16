@@ -19,12 +19,13 @@ import mongoose from 'mongoose'
     type: Number    ,
     required: true,
     minlength: 8
-  },
- age: {
-    type:Number,
-    required:true,
-    min:18
   }
+//   ,
+//  age: {
+//     type:Number,
+//     required:true,
+//     min:18
+//   }
 })
 
 
