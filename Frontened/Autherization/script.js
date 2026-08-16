@@ -1,6 +1,10 @@
+const API_BASE_URL =
+  "https://user-dashboard-backend-s374.vercel.app/api/v1";
 
-const login_api = 'http://localhost:8000/api/v1/auth/login';
-const signup_api = 'http://localhost:8000/api/v1/auth/signup'
+const login_api = `${API_BASE_URL}/auth/login`;
+const signup_api = `${API_BASE_URL}/auth/signup`;
+
+
 
 
 const loginTab = document.getElementById("loginTab");
@@ -91,7 +95,7 @@ signupForm.addEventListener("submit", async (e) => {
   const password = document.getElementById("signupPassword").value;
 
  try {
-    const response = await fetch("http://localhost:8000/api/v1/auth/signup", {
+    const response = await fetch(signup_api, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
